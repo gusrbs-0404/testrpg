@@ -1,6 +1,6 @@
 package testrpg;
 
-public class Wizard extends Player {
+public class Wizard extends Player implements Skill{
 
 	public Wizard(String name, int hp, int mp, int att, int def) {
 		super(Player.getname(), getHp(), 300, Player.getAtt(), getDef());
@@ -16,4 +16,8 @@ public class Wizard extends Player {
 		return def;
 	}
 
+	@Override
+	public void Skill() {
+		System.out.println("메테오!");
+	}
 }

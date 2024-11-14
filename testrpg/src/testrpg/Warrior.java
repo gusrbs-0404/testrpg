@@ -1,6 +1,6 @@
 package testrpg;
 
-public class Warrior extends Player {
+public class Warrior extends Player implements Skill{
 
 	public Warrior(String name, int hp, int mp, int att, int def) {
 		super(Player.getname(), getHp(), 150, Player.getAtt(), getDef());
@@ -16,4 +16,8 @@ public class Warrior extends Player {
 		return def;
 	}
 
+	@Override
+	public void Skill() {
+		System.out.println("내려찍기!");
+	}
 }

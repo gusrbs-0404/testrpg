@@ -1,6 +1,6 @@
 package testrpg;
 
-public class Archer extends Player {
+public class Archer extends Player implements Skill {
 
 	public Archer(String name, int hp, int mp, int att, int def) {
 		super(Player.getname(), getHp(), 150, Player.getAtt(), getDef());
@@ -14,5 +14,10 @@ public class Archer extends Player {
 	private static int getDef() {
 		int def = ran.nextInt(50) + 30;
 		return def;
+	}
+
+	@Override
+	public void Skill() {
+		System.out.println("더블샷!");
 	}
 }

@@ -1,6 +1,6 @@
 package testrpg;
 
-public class Zombie extends Monster {
+public class Zombie extends Monster implements Skill{
 
 	public Zombie(String name, int hp, int att, int def, int exp) {
 		super(Monster.getname("좀비"), getHp(), getAtt(), getDef(), getExp());
@@ -25,5 +25,9 @@ public class Zombie extends Monster {
 		int def = ran.nextInt(5) + 1;
 		return def;
 	}
-
+	
+	@Override
+	public void Skill() {
+		System.out.println("체력 회복하기!");
+	}
 }

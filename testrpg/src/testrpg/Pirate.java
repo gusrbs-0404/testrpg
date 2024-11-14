@@ -1,6 +1,6 @@
 package testrpg;
 
-public class Pirate extends Player {
+public class Pirate extends Player implements Skill{
 
 	public Pirate(String name, int hp, int mp, int att, int def) {
 		super(Player.getname(), getHp(), 200, Player.getAtt(), getDef());
@@ -14,5 +14,10 @@ public class Pirate extends Player {
 	private static int getDef() {
 		int def = ran.nextInt(50) + 30;
 		return def;
+	}
+	
+	@Override
+	public void Skill() {
+
 	}
 }

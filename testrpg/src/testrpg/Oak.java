@@ -1,6 +1,6 @@
 package testrpg;
 
-public class Oak extends Monster {
+public class Oak extends Monster implements Skill{
 
 	public Oak(String name, int hp, int att, int def, int exp) {
 		super(Monster.getname("오크"), getHp(), getAtt(), getDef(), getExp());
@@ -24,5 +24,10 @@ public class Oak extends Monster {
 	private static int getExp() {
 		int def = ran.nextInt(10) + 1;
 		return def;
+	}
+
+	@Override
+	public void Skill() {
+		System.out.println("구르기!");
 	}
 }
