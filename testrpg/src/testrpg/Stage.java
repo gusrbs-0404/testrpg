@@ -1,5 +1,5 @@
 package testrpg;
 
-public class Stage {
+interface Stage {
 
 }
