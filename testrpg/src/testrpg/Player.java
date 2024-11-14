@@ -12,10 +12,6 @@ public class Player extends Unit {
 		super(name, hp, mp, att, def);
 	}
 
-	public void skill() {
-
-	}
-
 	public static String getname() {
 		String[] name1 = { "나약한", "배고픈", "강력한", "무기력한", "다재다능한", "다재무능한", "현란한", "묵직한", "장난쓰러운", "왕족", "귀족", "노비", "평민",
 				"재빠른" };
@@ -30,7 +26,7 @@ public class Player extends Unit {
 	}
 
 	public static int getAtt() {
-		int att = ran.nextInt(60) + 30;
+		int att = ran.nextInt(70) + 30;
 		return att;
 	}
 
