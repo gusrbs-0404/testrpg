@@ -3,7 +3,7 @@ package testrpg;
 public class Zombie extends Monster {
 
 	public Zombie(String name, int hp, int att, int def, int exp) {
-		super(Monster.getname("좀비"), getHp(), att, getDef(), exp);
+		super(Monster.getname("좀비"), getHp(), getAtt(), getDef(), getExp());
 	}
 
 	private static int getHp() {
