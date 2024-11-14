@@ -33,5 +33,11 @@ public class Player extends Unit {
 		int att = ran.nextInt(60) + 30;
 		return att;
 	}
+	
+	@Override
+	public String toString() {
+		String msg = String.format("%s | [%d/%d | %d/%d] | [%d/%d]", name, hp, MAX_HP, mp, MAX_MP, exp,MAX_EXP);
+		return msg;
+	}
 
 }
