@@ -14,6 +14,5 @@ public abstract class Monster {
 		this.att = att;
 		this.def = def;
 	}
-	
-	
+
 }
