@@ -1,7 +1,5 @@
 package testrpg;
 
-import java.util.Random;
-
 public class Player extends Unit {
 
 	public int money;
@@ -30,8 +28,8 @@ public class Player extends Unit {
 
 	@Override
 	public String toString() {
-		String msg = String.format("%s | [체력 %d/%d] | [마나 %d/%d]\n\t[공격력 %d] | [방어력 %d] | [경험치 %d/%d] ", name, hp,
-				MAX_HP, mp, MAX_MP, att, def, exp, MAX_EXP);
+		String msg = String.format("%s |[LV %d] | [체력 %d/%d] | [마나 %d/%d]\n\t[공격력 %d] | [방어력 %d] | [경험치 %d/%d] ", name,
+				level, hp, MAX_HP, mp, MAX_MP, att, def, exp, MAX_EXP);
 		return msg;
 	}
 
