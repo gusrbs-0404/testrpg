@@ -90,7 +90,7 @@ public class Store extends Stage implements Runnable {
 
 	private void sale() {
 		if (RPGGame.inventory.size() == 0) {
-			System.out.println("아이템이 없습니다.");
+			System.out.println("인벤토리에 아무것도 없다..");
 			return;
 		}
 		// 판매

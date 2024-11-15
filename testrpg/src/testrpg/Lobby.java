@@ -16,7 +16,7 @@ public class Lobby extends Stage implements Runnable {
 		while (isLobby) {
 			try {
 				System.out.println("=====[LOBBY]=====");
-				System.out.println("[1. 전투] [2. 상점] [3. 길드] [4. 인벤토리] [5. 종료]");
+				System.out.println("[1. 전투] [2. 상점] [3. 길드] [4. 파티] [5. 인벤토리] [6. 종료]");
 				buffer.setLength(0);
 				System.out.print("메뉴 입력 : ");
 				String select = reader.readLine();
@@ -36,6 +36,9 @@ public class Lobby extends Stage implements Runnable {
 			isLobby = false;
 		} else if (select.equals("길드")) {
 			guild();
+			isLobby = false;
+		} else if (select.equals("파티")) {
+			party();
 			isLobby = false;
 		} else if (select.equals("인벤토리")) {
 			inventory();
@@ -67,6 +70,13 @@ public class Lobby extends Stage implements Runnable {
 		Thread guildThread = new Thread(guild);
 
 		guildThread.start();
+	}
+
+	private void party() {
+		Party party = new Party();
+		Thread partyThread = new Thread(party);
+
+		partyThread.start();
 	}
 
 	private void inventory() {
