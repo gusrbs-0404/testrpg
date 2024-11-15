@@ -6,6 +6,8 @@ public class RPGGame {
 
 	public static ArrayList<Player> player = new ArrayList<>();
 
+	public static ArrayList<Player> party = new ArrayList<>();
+	
 	private void RPGGame() {
 	}
 
