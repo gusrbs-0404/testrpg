@@ -10,6 +10,8 @@ public class RPGGame {
 
 	public static ArrayList<Item> intem = new ArrayList<>();
 
+	public static ArrayList<Item> StoreIntem = new ArrayList<>();
+	
 	private void RPGGame() {
 	}
 
