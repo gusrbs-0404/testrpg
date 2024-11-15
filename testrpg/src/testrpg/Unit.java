@@ -1,5 +1,7 @@
 package testrpg;
 
+import java.util.Random;
+
 public abstract class Unit {
 	protected String name;
 	protected int hp;
@@ -17,6 +19,8 @@ public abstract class Unit {
 	protected Item ring;
 
 	protected boolean party;
+	
+	public static Random ran = new Random();
 
 	public Unit(String name, int hp, int mp, int att, int def) {
 		this.name = name;

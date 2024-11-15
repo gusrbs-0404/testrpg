@@ -18,11 +18,9 @@ public abstract class Monster extends Unit {
 	protected int def;
 	protected int exp;
 
-	public static Random ran = new Random();
-
 	public static String getname(String title) {
 		String[] getName = { "강력한", "독", "화염", "얼음", "나무", "바다" };
-		int nameSize = ran.nextInt(getName.length);
+		int nameSize = Unit.ran.nextInt(getName.length);
 
 		String name = getName[nameSize] + " " + title;
 		System.out.println(name);
