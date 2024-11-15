@@ -38,4 +38,10 @@ public class Item {
 		int ranPrice = ran.nextInt(2400) + 500;
 		return ranPrice;
 	}
+
+	@Override
+	public String toString() {
+		String msg = String.format("%s | [공격력 %d] | [방어력 %d]\n[가격 %d]", name, plusAtt, plusdet, price);
+		return super.toString();
+	}
 }
