@@ -1,6 +1,6 @@
 package testrpg;
 
-public class Guild implements Stage, Runnable {
+public class Guild extends Stage implements Runnable {
 
 	private boolean isGuild = true;
 
@@ -44,6 +44,10 @@ public class Guild implements Stage, Runnable {
 		// 새로운 길드원 랜덤으로 5명 표시
 		// 원하는 길드원 이름 입력받아서 대려오기
 
+	}
+
+	private void ranUnit() {
+		int r = ran.nextInt();
 	}
 
 	private void deport() {

@@ -1,6 +1,6 @@
 package testrpg;
 
-public class Store implements Stage, Runnable {
+public class Store extends Stage implements Runnable {
 
 	private boolean isStore = true;
 
