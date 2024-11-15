@@ -42,6 +42,6 @@ public class Item {
 	@Override
 	public String toString() {
 		String msg = String.format("%s | [공격력 %d] | [방어력 %d]\n[가격 %d]", name, plusAtt, plusdet, price);
-		return super.toString();
+		return msg;
 	}
 }
