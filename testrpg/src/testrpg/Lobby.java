@@ -1,6 +1,6 @@
 package testrpg;
 
-public class Lobby implements Stage, Runnable {
+public class Lobby extends Stage implements Runnable {
 
 	// 메뉴 배틀 상점 길드 각각 스레드로 돌린다.
 	// 입력 buffer wirter
