@@ -37,7 +37,7 @@ public class Item {
 	}
 
 	public static int price() {
-		int ranPrice = ran.nextInt(2400) + 500;
+		int ranPrice = ran.nextInt(3500) + 500;
 		return ranPrice;
 	}
 
