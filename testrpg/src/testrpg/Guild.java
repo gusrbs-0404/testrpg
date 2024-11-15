@@ -44,35 +44,39 @@ public class Guild extends Stage implements Runnable {
 	private void inquiry() {
 		// 길드원 조회 최대 10명
 		// 전부 출력
-		
+		System.out.println(player);
 	}
 
 	private void recruit() {
 		// 영입
 		// 랜덤으로 아무나 대리고옴
-		ranUnit();
-		System.out.println(player);
+		if (player.size() == 10) {
+			System.out.println("최대인원 입니다!");
+			return;
+		}
 
-	}
-
-	private void ranUnit() {
 		int ranNum = ran.nextInt(5) + 1;
-		System.out.println(ranNum);
+
 		if (ranNum == ARCHER) {
 			Archer archer = new Archer();
 			player.add(archer);
+			System.out.println("궁수 영입완료!");
 		} else if (ranNum == WARRIOR) {
 			Warrior warrior = new Warrior();
 			player.add(warrior);
+			System.out.println("전사 영입완료!");
 		} else if (ranNum == WIZARD) {
 			Wizard wizard = new Wizard();
 			player.add(wizard);
+			System.out.println("마법사 영입완료!");
 		} else if (ranNum == BANDIT) {
 			Bandit bandit = new Bandit();
 			player.add(bandit);
+			System.out.println("도적 영입완료!");
 		} else if (ranNum == PIRATE) {
 			Pirate pirate = new Pirate();
 			player.add(pirate);
+			System.out.println("해적 영입완료!");
 		}
 	}
 
