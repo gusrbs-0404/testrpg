@@ -15,7 +15,7 @@ public class Guild extends Stage implements Runnable {
 		while (isGuild) {
 			try {
 				System.out.println("=====[GUILD]=====");
-				System.out.println("[1. 조회] [2. 영입] [3. 추방] [4.파티] [5. 종료]");
+				System.out.println("[1. 조회] [2. 영입] [3. 추방] [4. 종료]");
 				buffer.setLength(0);
 				System.out.print("메뉴 입력 : ");
 				String select = reader.readLine();
@@ -32,8 +32,6 @@ public class Guild extends Stage implements Runnable {
 			recruit();
 		} else if (select.equals("추방")) {
 			deport();
-		} else if (select.equals("파티")) {
-			party();
 		} else if (select.equals("종료")) {
 			System.out.println("전투 종료합니다.");
 			Thread lobbyThread = new Thread(Lobby.lobby);
@@ -53,7 +51,7 @@ public class Guild extends Stage implements Runnable {
 		printPlayer();
 	}
 
-	private void printPlayer() {
+	public void printPlayer() {
 		int count = 1;
 		for (Player i : RPGGame.player) {
 			System.out.print(count++ + "번 | ");
@@ -124,9 +122,40 @@ public class Guild extends Stage implements Runnable {
 		System.out.printf("%s 를 추방합니다.\n", RPGGame.player.get(num));
 		RPGGame.player.remove(num);
 	}
-	
+
 	private void party() {
-		
-		
+		if (RPGGame.party.size() == 4) {
+			System.out.println("파티원 모집이 끝났습니다.");
+			return;
+		}
+
+		printPlayer();
+		try {
+			System.out.print("파티 모집할 길드원 번호 입력 : ");
+			buffer.setLength(0);
+			String number = reader.readLine();
+			inputParty(number);
+		} catch (Exception e) {
+		}
+
 	}
+
+	private void inputParty(String number) {
+		printPlayer();
+
+		int num = -1;
+		try {
+			num = Integer.parseInt(number) - 1;
+			if (num < 0 || num >= RPGGame.player.size()) {
+				System.err.println("잘못입력했습니다.");
+			}
+		} catch (Exception e) {
+			System.err.println("잘못입력했습니다.");
+			return;
+		}
+
+		System.out.printf("%s 를 파티모집 합니다.\n", RPGGame.party.get(num));
+		RPGGame.party.add(RPGGame.party.get(num));
+	}
+
 }
