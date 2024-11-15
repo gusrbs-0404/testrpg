@@ -44,7 +44,18 @@ public class Guild extends Stage implements Runnable {
 	private void inquiry() {
 		// 길드원 조회 최대 10명
 		// 전부 출력
-		System.out.println(player);
+		if(player.size() == 0) {
+			System.out.println("길드원이 없습니다.");
+			return;
+		}
+		printPlayer();
+	}
+
+	private void printPlayer() {
+		for (Player i : player) {
+			System.out.println(i);
+		}
+		System.out.printf("총인원 수 : %d\n", player.size());
 	}
 
 	private void recruit() {
@@ -83,7 +94,8 @@ public class Guild extends Stage implements Runnable {
 	private void deport() {
 		// 추방
 		// 길드원 출력
+		printPlayer();
 		// 선택한 길드원 이름 으로 추방
-
+		
 	}
 }
