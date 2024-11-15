@@ -2,7 +2,7 @@ package testrpg;
 
 public class Pirate extends Player implements Skill{
 
-	public Pirate(String name, int hp, int mp, int att, int def) {
+	public Pirate() {
 		super(Player.getname(), getHp(), 200, Player.getAtt(), getDef());
 	}
 

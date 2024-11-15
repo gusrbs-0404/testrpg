@@ -2,7 +2,7 @@ package testrpg;
 
 public class Bandit extends Player implements Skill{
 
-	public Bandit(String name, int hp, int mp, int att, int def) {
+	public Bandit() {
 		super(Player.getname(), getHp(), 200, Player.getAtt(), getDef());
 	}
 

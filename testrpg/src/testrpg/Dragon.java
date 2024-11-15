@@ -2,7 +2,7 @@ package testrpg;
 
 public class Dragon extends Monster implements Fly, Skill{
 
-	public Dragon(String name, int hp, int att, int def, int exp) {
+	public Dragon() {
 		super(Monster.getname("드래곤"), getHp(), getAtt(), getDef(), getExp());
 	}
 

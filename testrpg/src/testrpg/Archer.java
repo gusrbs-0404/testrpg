@@ -2,7 +2,7 @@ package testrpg;
 
 public class Archer extends Player implements Skill {
 
-	public Archer(String name, int hp, int mp, int att, int def) {
+	public Archer() {
 		super(Player.getname(), getHp(), 150, Player.getAtt(), getDef());
 	}
 

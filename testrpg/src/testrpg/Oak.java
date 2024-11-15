@@ -2,7 +2,7 @@ package testrpg;
 
 public class Oak extends Monster implements Skill{
 
-	public Oak(String name, int hp, int att, int def, int exp) {
+	public Oak() {
 		super(Monster.getname("오크"), getHp(), getAtt(), getDef(), getExp());
 	}
 

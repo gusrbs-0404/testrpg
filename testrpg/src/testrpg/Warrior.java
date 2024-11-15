@@ -2,7 +2,7 @@ package testrpg;
 
 public class Warrior extends Player implements Skill{
 
-	public Warrior(String name, int hp, int mp, int att, int def) {
+	public Warrior() {
 		super(Player.getname(), getHp(), 150, Player.getAtt(), getDef());
 	}
 
