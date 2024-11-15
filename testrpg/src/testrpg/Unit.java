@@ -34,4 +34,11 @@ public abstract class Unit {
 		this.ring = null;
 	}
 
+	public Unit() {
+		this.name = name;
+		this.MAX_HP = hp;
+		this.hp = hp;
+		this.att = att;
+		this.def = def;
+	}
 }
