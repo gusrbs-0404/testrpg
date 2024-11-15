@@ -6,8 +6,6 @@ public class Player extends Unit {
 
 	public int money;
 
-	public static Random ran = new Random();
-
 	public Player(String name, int hp, int mp, int att, int def) {
 		super(name, hp, mp, att, def);
 	}
