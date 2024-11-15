@@ -8,9 +8,9 @@ public class RPGGame {
 
 	public static ArrayList<Player> party = new ArrayList<>();
 
-	public static ArrayList<Item> intem = new ArrayList<>();
+	public static ArrayList<Item> inventory = new ArrayList<>();
 
-	public static ArrayList<Item> StoreIntem = new ArrayList<>();
+	public static ArrayList<Item> storeItem = new ArrayList<>();
 	
 	private void RPGGame() {
 	}
