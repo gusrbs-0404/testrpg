@@ -19,7 +19,7 @@ public abstract class Unit {
 	protected Item ring;
 
 	protected boolean party;
-	
+
 	public static Random ran = new Random();
 
 	public Unit(String name, int hp, int mp, int att, int def) {
@@ -45,4 +45,5 @@ public abstract class Unit {
 		this.att = att;
 		this.def = def;
 	}
+
 }
