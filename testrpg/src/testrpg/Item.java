@@ -23,10 +23,12 @@ public class Item {
 		this.price = price;
 	}
 
-	public static String ranName() {
+	public static String getName(String title) {
 		String[] kind = { "나무", "철", "금", "다이아몬드" };
 		int kindIndex = ran.nextInt(kind.length);
-		return kind[kindIndex];
+
+		String name = kind[kindIndex] + " " + title;
+		return name;
 	}
 
 	public static int plusAttAnddet() {
