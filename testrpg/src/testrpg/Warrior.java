@@ -3,7 +3,7 @@ package testrpg;
 public class Warrior extends Player implements Skill{
 
 	public Warrior() {
-		super(Player.getname(), getHp(), 150, Player.getAtt(), getDef());
+		super(Player.getname("마법사"), getHp(), 150, Player.getAtt(), getDef());
 	}
 
 	private static int getHp() {

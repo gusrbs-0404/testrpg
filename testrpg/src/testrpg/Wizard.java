@@ -1,9 +1,9 @@
 package testrpg;
 
-public class Wizard extends Player implements Skill{
+public class Wizard extends Player implements Skill, Attack {
 
 	public Wizard() {
-		super(Player.getname(), getHp(), 300, Player.getAtt(), getDef());
+		super(Player.getname("전사"), getHp(), 300, Player.getAtt(), getDef());
 	}
 
 	private static int getHp() {
@@ -18,6 +18,6 @@ public class Wizard extends Player implements Skill{
 
 	@Override
 	public void Skill() {
-		System.out.println("메테오!");
+		System.out.println("힐!!!");
 	}
 }

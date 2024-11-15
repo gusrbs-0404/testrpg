@@ -1,6 +1,6 @@
 package testrpg;
 
-public class Zombie extends Monster implements Skill{
+public class Zombie extends Monster implements Skill, Attack{
 
 	public Zombie() {
 		super(Monster.getname("좀비"), getHp(), getAtt(), getDef(), getExp());

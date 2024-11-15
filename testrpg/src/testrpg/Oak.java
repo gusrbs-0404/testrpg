@@ -1,6 +1,6 @@
 package testrpg;
 
-public class Oak extends Monster implements Skill{
+public class Oak extends Monster implements Skill, Attack{
 
 	public Oak() {
 		super(Monster.getname("오크"), getHp(), getAtt(), getDef(), getExp());

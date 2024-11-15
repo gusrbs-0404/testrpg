@@ -1,6 +1,6 @@
 package testrpg;
 
-public class Battle implements Stage, Runnable {
+public class Battle extends Stage implements Runnable {
 	private boolean isBattle = true;
 
 	@Override
@@ -49,6 +49,10 @@ public class Battle implements Stage, Runnable {
 	private void dragon() {
 		Dragon dragon = new Dragon();
 		System.out.println(dragon);
+		int a = dragon.attack(dragon);
+		System.out.println(a);
 	}
+	
+	
 
 }

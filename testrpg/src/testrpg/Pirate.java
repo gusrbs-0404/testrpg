@@ -1,9 +1,9 @@
 package testrpg;
 
-public class Pirate extends Player implements Skill{
+public class Pirate extends Player implements Skill, Attack{
 
 	public Pirate() {
-		super(Player.getname(), getHp(), 200, Player.getAtt(), getDef());
+		super(Player.getname("해적"), getHp(), 200, Player.getAtt(), getDef());
 	}
 
 	private static int getHp() {

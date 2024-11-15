@@ -1,7 +1,5 @@
 package testrpg;
 
-import java.util.Random;
-
 public abstract class Monster extends Unit {
 	public Monster(String name, int hp, int att, int def, int exp) {
 		this.name = name;
