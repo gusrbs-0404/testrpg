@@ -8,10 +8,11 @@ public class Lobby implements Stage, Runnable {
 
 	static Thread lobbyThread = new Thread(lobby);
 
-	private boolean isLobby = true;
+	public static boolean isLobby = true;
 
 	@Override
 	public void run() {
+		isLobby = true;
 		while (isLobby) {
 			try {
 				System.out.println("=====[LOBBY]=====");

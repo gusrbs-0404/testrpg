@@ -31,14 +31,16 @@ public class Store implements Stage, Runnable {
 			isStore = false;
 			lobbyThread.start();
 		}
-
 	}
 
 	private void purchase() {
-
+		// 구매
+		// 구매 목록 보여주고
+		// 무기 갑옷 반지 포션 
 	}
 
 	private void sale() {
-
+		// 판매
+		// 인벤토리의 목록을 보여준다
 	}
 }
