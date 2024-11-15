@@ -1,6 +1,11 @@
 package testrpg;
 
+import java.util.ArrayList;
+
 public class RPGGame {
+
+	public static ArrayList<Player> player = new ArrayList<>();
+
 	private void RPGGame() {
 	}
 
@@ -11,6 +16,7 @@ public class RPGGame {
 	}
 
 	public void run() {
-
+		Lobby.lobbyThread.start();
 	}
+
 }

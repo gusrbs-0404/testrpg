@@ -44,7 +44,7 @@ public class Guild extends Stage implements Runnable {
 	private void inquiry() {
 		// 길드원 조회 최대 10명
 		// 전부 출력
-		if (player.size() == 0) {
+		if (RPGGame.player.size() == 0) {
 			System.out.println("길드원이 없습니다.");
 			return;
 		}
@@ -53,17 +53,17 @@ public class Guild extends Stage implements Runnable {
 
 	private void printPlayer() {
 		int count = 1;
-		for (Player i : player) {
+		for (Player i : RPGGame.player) {
 			System.out.print(count++ + "번 | ");
 			System.out.println(i);
 		}
-		System.out.printf("총인원 수 : %d\n", player.size());
+		System.out.printf("총인원 수 : %d\n", RPGGame.player.size());
 	}
 
 	private void recruit() {
 		// 영입
 		// 랜덤으로 아무나 대리고옴
-		if (player.size() == 10) {
+		if (RPGGame.player.size() == 10) {
 			System.out.println("최대인원 입니다!");
 			return;
 		}
@@ -72,23 +72,23 @@ public class Guild extends Stage implements Runnable {
 
 		if (ranNum == ARCHER) {
 			Archer archer = new Archer();
-			player.add(archer);
+			RPGGame.player.add(archer);
 			System.out.println("궁수 영입완료!");
 		} else if (ranNum == WARRIOR) {
 			Warrior warrior = new Warrior();
-			player.add(warrior);
+			RPGGame.player.add(warrior);
 			System.out.println("전사 영입완료!");
 		} else if (ranNum == WIZARD) {
 			Wizard wizard = new Wizard();
-			player.add(wizard);
+			RPGGame.player.add(wizard);
 			System.out.println("마법사 영입완료!");
 		} else if (ranNum == BANDIT) {
 			Bandit bandit = new Bandit();
-			player.add(bandit);
+			RPGGame.player.add(bandit);
 			System.out.println("도적 영입완료!");
 		} else if (ranNum == PIRATE) {
 			Pirate pirate = new Pirate();
-			player.add(pirate);
+			RPGGame.player.add(pirate);
 			System.out.println("해적 영입완료!");
 		}
 	}
@@ -111,7 +111,7 @@ public class Guild extends Stage implements Runnable {
 		int num = -1;
 		try {
 			num = Integer.parseInt(number) - 1;
-			if (num < 0 || num >= player.size()) {
+			if (num < 0 || num >= RPGGame.player.size()) {
 				System.err.println("잘못입력했습니다.");
 			}
 		} catch (Exception e) {
@@ -119,7 +119,7 @@ public class Guild extends Stage implements Runnable {
 			return;
 		}
 
-		System.out.printf("%s 를 추방합니다.\n", player.get(num));
-		player.remove(num);
+		System.out.printf("%s 를 추방합니다.\n", RPGGame.player.get(num));
+		RPGGame.player.remove(num);
 	}
 }
