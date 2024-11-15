@@ -15,7 +15,7 @@ public class Guild extends Stage implements Runnable {
 		while (isGuild) {
 			try {
 				System.out.println("=====[GUILD]=====");
-				System.out.println("[1. 조회] [2. 영입] [3. 추방] [4. 종료]");
+				System.out.println("[1. 조회] [2. 영입] [3. 추방] [4.파티] [5. 종료]");
 				buffer.setLength(0);
 				System.out.print("메뉴 입력 : ");
 				String select = reader.readLine();
@@ -32,6 +32,8 @@ public class Guild extends Stage implements Runnable {
 			recruit();
 		} else if (select.equals("추방")) {
 			deport();
+		} else if (select.equals("파티")) {
+			party();
 		} else if (select.equals("종료")) {
 			System.out.println("전투 종료합니다.");
 			Thread lobbyThread = new Thread(Lobby.lobby);
@@ -121,5 +123,10 @@ public class Guild extends Stage implements Runnable {
 
 		System.out.printf("%s 를 추방합니다.\n", RPGGame.player.get(num));
 		RPGGame.player.remove(num);
+	}
+	
+	private void party() {
+		
+		
 	}
 }
