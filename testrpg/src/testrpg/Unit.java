@@ -46,4 +46,9 @@ public abstract class Unit {
 		this.def = def;
 	}
 
+	public int ranCritical() {
+		int ranCritical = ran.nextInt(30);
+		return ranCritical;
+	}
+
 }
