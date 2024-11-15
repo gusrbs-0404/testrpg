@@ -7,14 +7,16 @@ public class Store implements Stage, Runnable {
 	@Override
 	public void run() {
 		isStore = true;
-		try {
-			System.out.println("=====[STORE]=====");
-			System.out.println("[1. 구매] [2. 판매] [3. 종료]");
-			buffer.setLength(0);
-			System.out.print("메뉴 입력 : ");
-			String select = reader.readLine();
-			menu(select);
-		} catch (Exception e) {
+		while (isStore) {
+			try {
+				System.out.println("=====[STORE]=====");
+				System.out.println("[1. 구매] [2. 판매] [3. 종료]");
+				buffer.setLength(0);
+				System.out.print("메뉴 입력 : ");
+				String select = reader.readLine();
+				menu(select);
+			} catch (Exception e) {
+			}
 		}
 	}
 
