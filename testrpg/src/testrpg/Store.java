@@ -84,12 +84,13 @@ public class Store extends Stage implements Runnable {
 			return;
 		}
 
-		if(RPGGame.partyMoney < RPGGame.storeItem.get(num).price) {
+		if (RPGGame.partyMoney < RPGGame.storeItem.get(num).price) {
 			System.err.println("파티의 돈이 부족합니다!!!");
 			return;
 		}
-		
+
 		System.out.printf("%s\n 아이템을 구매합니다.\n", RPGGame.storeItem.get(num));
+		System.out.println("파티 소지금 : " + RPGGame.partyMoney);
 		RPGGame.inventory.add(RPGGame.storeItem.get(num));
 	}
 
@@ -124,7 +125,10 @@ public class Store extends Stage implements Runnable {
 			return;
 		}
 
+		RPGGame.partyMoney += RPGGame.storeItem.get(num).price;
+
 		System.out.printf("%s\n 아이템을 판매합니다.\n", RPGGame.inventory.get(num));
+		System.out.println("파티 소지금 : " + RPGGame.partyMoney);
 		RPGGame.inventory.remove(num);
 	}
 
