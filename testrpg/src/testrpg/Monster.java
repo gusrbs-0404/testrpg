@@ -25,7 +25,7 @@ public abstract class Monster extends Unit {
 		return name;
 	}
 
-	public int monsterInteger() {
+	public static int monsterInteger() {
 		int monsterInteger = 1;
 		return monsterInteger;
 	}
