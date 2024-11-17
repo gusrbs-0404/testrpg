@@ -23,6 +23,11 @@ public class Item {
 		this.price = price;
 	}
 
+	public Item(String name, int price) {
+		this.name = name;
+		this.price = price;
+	}
+
 	public static String getName(String title) {
 		String[] kind = { "나무", "철", "금", "다이아몬드" };
 		int kindIndex = ran.nextInt(kind.length);
