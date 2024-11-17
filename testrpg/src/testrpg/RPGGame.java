@@ -11,7 +11,9 @@ public class RPGGame {
 	public static ArrayList<Item> inventory = new ArrayList<>();
 
 	public static ArrayList<Item> storeItem = new ArrayList<>();
-	
+
+	public static int partyMoney = 0;
+
 	private void RPGGame() {
 	}
 
