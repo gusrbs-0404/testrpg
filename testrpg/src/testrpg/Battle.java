@@ -104,6 +104,12 @@ public class Battle extends Stage implements Runnable {
 
 			if (!isHpMonster(monster)) {
 				System.out.println("플레이어 승리!");
+
+				if (ranMonsterInteger() == Monster.monsterInteger()) {
+					System.out.println("몬스터 정수를 얻었다!");
+					Item monsterInteger = new Item("몬스터 정수", 1000);
+					RPGGame.inventory.add(monsterInteger);
+				}
 				isrun = false;
 				return;
 			}
@@ -163,6 +169,11 @@ public class Battle extends Stage implements Runnable {
 	private int actionplayerIndex() {
 		int playerIndex = ran.nextInt(4);
 		return playerIndex;
+	}
+
+	private int ranMonsterInteger() {
+		int rnaNum = ran.nextInt() + 5;
+		return rnaNum;
 	}
 
 }
