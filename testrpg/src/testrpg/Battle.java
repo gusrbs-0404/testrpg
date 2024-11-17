@@ -30,11 +30,24 @@ public class Battle extends Stage implements Runnable {
 	}
 
 	private void menu(String select) {
+
 		if (select.equals("좀비")) {
+			if (RPGGame.party.size() < 4) {
+				System.err.println("충분한 파티원을 모집하고 전투하세요!");
+				return;
+			}
 			zombie();
 		} else if (select.equals("오크")) {
+			if (RPGGame.party.size() < 4) {
+				System.err.println("충분한 파티원을 모집하고 전투하세요!");
+				return;
+			}
 			oak();
 		} else if (select.equals("드래곤")) {
+			if (RPGGame.party.size() < 4) {
+				System.err.println("충분한 파티원을 모집하고 전투하세요!");
+				return;
+			}
 			dragon();
 		} else if (select.equals("종료")) {
 			System.out.println("전투 종료합니다.");
@@ -48,42 +61,85 @@ public class Battle extends Stage implements Runnable {
 	private void zombie() {
 		zombie = new Zombie();
 
-		while (true) {
+		battlePlay(zombie);
+	}
+
+	private void oak() {
+		oak = new Oak();
+		battlePlay(oak);
+	}
+
+	private void dragon() {
+		dragon = new Dragon();
+		battlePlay(dragon);
+	}
+
+	private void battlePlay(Monster monster) {
+		boolean isrun = true;
+		while (isrun) {
 			int action = action();
 
+			int playreIndex = actionplayerIndex();
+
+			int damage;
 			switch (action) {
 			case 0:
-				damage = member.attack();
-				System.out.println(member.getName() + "이(가) 일반 공격! 데미지: " + damage);
+				damage = RPGGame.party.get(playreIndex).att;
+				System.out.println(RPGGame.party.get(playreIndex).name + "이(가) 일반 공격! 데미지: " + damage);
 				break;
 			case 1:
-				damage = member.criticalHit();
-				System.out.println(member.getName() + "이(가) 치명타 공격! 데미지: " + damage);
+				damage = RPGGame.party.get(playreIndex).att + 50;
+				System.out.println(RPGGame.party.get(playreIndex).name + "이(가) 치명타 공격! 데미지: " + damage);
 				break;
 			case 2:
-				damage = member.skillAttack();
-				System.out.println(member.getName() + "이(가) 스킬 공격! 데미지: " + damage);
+				damage = RPGGame.party.get(playreIndex).att + 100;
+				System.out.println(RPGGame.party.get(playreIndex).name + "이(가) 스킬 공격! 데미지: " + damage);
 				break;
 			default:
 				damage = 0;
 				break;
 			}
+
+			System.out.println("남은 몬스터의 체력 : " + monster.hp);
+
+			if (!isHpMonster(monster)) {
+				System.out.println("플레이어 승리!");
+				isrun = false;
+				return;
+			}
+			monster.hp -= damage;
+
+			action = action();
+			damage = 0;
+			switch (action) {
+			case 0:
+				damage = monster.att;
+				System.out.println(monster.name + "이(가) 일반 공격! 데미지: " + damage);
+				break;
+			case 1:
+				damage = zombie.att + 50;
+				System.out.println(monster.name + "이(가) 치명타 공격! 데미지: " + damage);
+				break;
+			case 2:
+				damage = zombie.att + 100;
+				System.out.println(monster.name + "이(가) 스킬 공격! 데미지: " + damage);
+				break;
+			default:
+				damage = 0;
+				break;
+			}
+
+			if (!isHpUnit(RPGGame.party.get(playreIndex))) {
+				System.out.println("몬스터 승리!");
+				isrun = false;
+				return;
+			}
+
+			System.out.println("남은 플레이어의 체력 : " + RPGGame.party.get(playreIndex).hp);
 		}
 	}
 
-	private void oak() {
-		oak = new Oak();
-		System.out.println(oak);
-	}
-
-	private void dragon() {
-		dragon = new Dragon();
-		System.out.println(dragon);
-		int a = dragon.attack(dragon);
-		System.out.println(a);
-	}
-
-	private boolean isHpMonster(Monster monster, Unit unit) {
+	private boolean isHpMonster(Monster monster) {
 		if (monster.hp < 0) {
 			monster.hp = 0;
 			return false;
@@ -91,18 +147,11 @@ public class Battle extends Stage implements Runnable {
 		return true;
 	}
 
-	private boolean isHpUnit(ArrayList<Player> party) {
-		int count = 0;
-		for (int i = 0; i < RPGGame.party.size(); i++) {
-			if (party.get(i).hp < 0) {
-				party.get(i).hp = 0;
-				count++;
-			}
-
-			if (count == 4) {
-				return false;
-			}
+	private boolean isHpUnit(Player player) {
+		if (player.hp < 0) {
+			player.hp = 0;
 		}
+		return true;
 	}
 
 	private int action() {
