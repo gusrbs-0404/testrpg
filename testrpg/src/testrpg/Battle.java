@@ -172,7 +172,7 @@ public class Battle extends Stage implements Runnable {
 	}
 
 	private int ranMonsterInteger() {
-		int rnaNum = ran.nextInt() + 5;
+		int rnaNum = ran.nextInt() + 3;
 		return rnaNum;
 	}
 
