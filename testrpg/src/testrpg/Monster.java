@@ -25,6 +25,11 @@ public abstract class Monster extends Unit {
 		return name;
 	}
 
+	public int monsterInteger() {
+		int monsterInteger = 1;
+		return monsterInteger;
+	}
+
 	@Override
 	public String toString() {
 		String msg = String.format("[%s] | [%d/%d]\n [공격력 : %d | 방어력 : %d]", name, hp, MAX_HP, att, def);
